@@ -1,0 +1,113 @@
+/**
+ * Modern Docusaurus styling for a professional look
+ */
+
+/* Override Infima variables */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-light: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --gradient-primary: linear-gradient(90deg, #2e8555, #25c2a0);
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #1fa588;
+  --docusaurus-highlighted-code-line-bg: rgba(0,0,0,0.3);
+}
+
+/* Global body tweaks */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #fefefe;
+}
+
+[data-theme='dark'] .main-wrapper {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Headings with gradient effect */
+h1, h2, h3 {
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+/* Buttons with gradient and hover */
+.button {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #25c2a0, #2e8555);
+}
+
+/* Cards with subtle shadow and hover animation */
+.card {
+  border-radius: 14px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+[data-theme='dark'] .card {
+  background-color: #1f1f1f;
+  border-color: rgba(255,255,255,0.05);
+}
+
+/* Highlighted code lines */
+.docusaurus-highlight-code-line {
+  background-color: var(--docusaurus-highlighted-code-line-bg);
+}
+
+/* Links */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 1.4rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .main-wrapper {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+}
